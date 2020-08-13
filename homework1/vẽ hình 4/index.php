@@ -5,7 +5,7 @@ for ($i=6; $i >= 0 ; $i--) {
 			echo "# ";
 		}
 		else{
-			echo "a ";
+			echo "&nbsp&nbsp&nbsp";
 		}
 	}
 	echo "<br>";
