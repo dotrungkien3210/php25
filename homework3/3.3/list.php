@@ -1,5 +1,5 @@
 <?php
-$sanpham = array(
+$sanpham = array(// hàm list có nghiệm vụ là lưu thông tin các sản phẩm vào trong 1 biến global 
 
         'ID'       =>  'sp1',
         'NAME'     =>  'iphone1',

@@ -1,6 +1,5 @@
 <?php
-include "list.php";
-include "addProduct.php";
+include_once 'list.php';//hàm produc.php có tác dụng hiển thị ra các sản phẩm trong cửa hàng
   ?>
 <!DOCTYPE html>
 <html>
