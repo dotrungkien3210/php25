@@ -21,8 +21,8 @@ include_once 'list.php';//hàm produc.php có tác dụng hiển thị ra các s
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<p style="display:inline-block;padding-left: 50px ;">Mời bạn xem danh sách sản phẩm</p>
-<a style="display:inline-block;padding-left: 450px;"  href="cart.php">xem giỏ hàng</a>
+<p style="display:inline-block;margin-left: 50px ;">Mời bạn xem danh sách sản phẩm</p>
+<a style="display:inline-block;margin-left: 450px; height: 35px; width: 130px;" class="btn btn-primary"  href="cart.php">xem giỏ hàng</a>
 <table style="width:100%">
   <tr>
     <th>ID</th>
