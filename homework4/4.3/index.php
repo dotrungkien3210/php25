@@ -44,9 +44,9 @@ for ($a = 2; $a < count($files); $a++){ ?>
     <td><a href="uploads/<?php echo $files[$a]; ?>" download="<?php echo $files[$a]; ?>">Download</a></td>
     <td><a href="delete.php?name=uploads/<?php echo $files[$a]; ?>" style="color: red;">Delete</a></td>
     </tr></tr>
-  
+  <?php } ?>
 </table>
-    <?php } ?>
+   
 </form>
 </body>
 </html>
