@@ -1,8 +1,4 @@
 
-<?php
-
-
-  ?>
 
 
 <!DOCTYPE html>
@@ -20,9 +16,10 @@
   }
 </style>
 <body>
-<form method="POST" action="upload.php" enctype="multipart/form-data">
-    <input class="btn btn-success" type="file" name="file">
-    <input class="btn btn-success" type="submit" value="Upload">
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  Select file to upload:
+    <input class="btn btn-success" type="file" name="ANH_SP" id="ANH_SP">
+    <input class="btn btn-success"  type="submit" value="Upload" name="submit">
  </form>
     <table style="width:100%">
     <tr>

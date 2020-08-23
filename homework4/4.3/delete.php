@@ -1,9 +1,9 @@
 <?php
  
-// Built-in PHP function to delete file
+// xóa file
 unlink($_GET["name"]);
  
-// Redirecting back
+// chuyển hướng trở về index
 header("Location: " . $_SERVER["HTTP_REFERER"]);
 
 
