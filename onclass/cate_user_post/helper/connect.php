@@ -1,5 +1,5 @@
 <?php
-function connection(){
+function connect(){
 
 	$severname = "localhost";
 	$username = 'root';

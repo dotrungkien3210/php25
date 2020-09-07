@@ -1,23 +1,37 @@
 <?php
-// $severname = "localhost";
-// $username = 'root';
-// $password= '';
-// $dbname = "php25buoi5";
-// $conn = new mysqli($severname,$username,$password,$dbname);
-// if ($conn->connect_error) {
-// 	echo "failed to connect".$conn->connect_error;
-// 	exit();
-// }
-// $user = " SELECT * FROM categories ";
-// $categories = array();
-// $result = $conn->query($user);
-// while($row = $result->fetch_assoc()) { 
-// 	$categories[] = $row;
-// }
 
-include "../helper/sql.php";
-$categories = select('categories');
- ?>
+$id = $_GET['id'];
+
+// Có thể dùng isset để kiểm tra tồn tại $_GET
+
+
+
+
+
+$severname = "localhost";
+$username = 'root';
+$password= '';
+$dbname = "php25buoi5";
+$conn = new mysqli($severname,$username,$password,$dbname);
+if ($conn->connect_error) {
+	echo "failed to connect".$conn->connect_error;
+	exit();
+}
+
+
+
+
+// Viết câu lệnh để thêm dữ liệu
+    $query = "SELECT * from categories WHERE id = ". $id;
+  
+// Thực thi câu lệnh
+    $result = $conn->query($query);
+
+    // Trả về 1 bản ghi
+    $category = $result->fetch_assoc();
+   
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -37,17 +51,17 @@ $categories = select('categories');
 <body>
     <div class="container">
         <h3 class="text-center">--- CATEGORIES ---</h3>
-        <a href="category_button.php" class="btn btn-primary">Add New Category</a>
+        <a href="category_index.php" class="btn btn-primary">Back</a>
         <table class="table">
             <thead>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Thumbnail</th>
                 <th>Description</th>
-                <th>Action</th>
+                
             </thead>
 
-            <?php foreach ($categories as $key => $category) {?>
+          
 
             	<tr>
 	                <td><?php echo $category['id'];  ?></td>
@@ -56,14 +70,9 @@ $categories = select('categories');
 	                    <img src="https://video-thumbs.mediacdn.vn//vtv/2018/10/2/0210thoi-su-19h-15384852850441347953968-a1b84_thumb3.jpg" width="100px" height="100px">
 	                </td>
 	                <td><?php echo $category['description'];  ?></td>
-	                <td>
-	                    <a href="detail.php?id=<?php echo $category['id'] ?>">Detail</a>
-	                    <a href="edit.php?id=<?php echo $category['id'] ?>">Edit</a>
-	                    <a href="delete_process.php?id=<?php echo $category['id'] ?>">Delete</a>
-	                    
-	                </td>
+	                
 	            </tr>
- 			<?php }  ?>
+ 			
             
       
         </table>

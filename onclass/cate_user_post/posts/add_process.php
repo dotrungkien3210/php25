@@ -3,9 +3,11 @@ include '../helper/sql.php';
 
 
 $data = $_POST;
-$status = insert('categories',$data);
+
+
+$status = insert('users',$data);
 if($status)
-	header('Location: database.php');
+	header('Location: user_index.php');
 else
 	echo "that bai";
 

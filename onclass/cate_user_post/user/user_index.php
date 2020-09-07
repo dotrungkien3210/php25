@@ -1,44 +1,21 @@
 <?php
 
-$id = $_GET['id'];
 
-// Có thể dùng isset để kiểm tra tồn tại $_GET
+// include "../helper/sql.php";
+// include_once "../helper/connection.php";
+// include_once '../helper/Model.php';
+include_once 'User.php';
+$user_object = new User();
+$users = $user_object->getAll();
 
-
-
-
-
-$severname = "localhost";
-$username = 'root';
-$password= '';
-$dbname = "php25buoi5";
-$conn = new mysqli($severname,$username,$password,$dbname);
-if ($conn->connect_error) {
-	echo "failed to connect".$conn->connect_error;
-	exit();
-}
-
-
-
-
-// Viết câu lệnh để thêm dữ liệu
-    $query = "SELECT * from categories WHERE id = ". $id;
-  
-// Thực thi câu lệnh
-    $result = $conn->query($query);
-
-    // Trả về 1 bản ghi
-    $category = $result->fetch_assoc();
-   
-?>
-
+ ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CATEGORIES</title>
+    <title>USER</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
@@ -50,29 +27,34 @@ if ($conn->connect_error) {
 </head>
 <body>
     <div class="container">
-        <h3 class="text-center">--- CATEGORIES ---</h3>
-        <a href="database.php" class="btn btn-primary">Back</a>
+        <h3 class="text-center">--- USER ---</h3>
+        <a href="add.php" class="btn btn-primary">Add New USER</a>
         <table class="table">
             <thead>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Thumbnail</th>
                 <th>Description</th>
-                
+                <th>Action</th>
             </thead>
 
-          
+            <?php foreach ($users as $key => $user) {?>
 
             	<tr>
-	                <td><?php echo $category['id'];  ?></td>
-	                <td><?php echo $category['name'];  ?></td>
+	                <td><?php echo $user['users_id'];  ?></td>
+	                <td><?php echo $user['users_name'];  ?></td>
 	                <td>
 	                    <img src="https://video-thumbs.mediacdn.vn//vtv/2018/10/2/0210thoi-su-19h-15384852850441347953968-a1b84_thumb3.jpg" width="100px" height="100px">
 	                </td>
-	                <td><?php echo $category['description'];  ?></td>
-	                
+	                <td><?php echo $user['users_description'];  ?></td>
+	                <td>
+	                    <a href="detail.php?id=<?php echo $user['users_id'] ?>">Detail</a>
+	                    <a href="edit.php?id=<?php echo $user['users_id'] ?>">Edit</a>
+	                    <a href="delete_process.php?id=<?php echo $user['users_id'] ?>">Delete</a>
+	                    
+	                </td>
 	            </tr>
- 			
+ 			<?php }  ?>
             
       
         </table>

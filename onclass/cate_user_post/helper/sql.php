@@ -1,11 +1,14 @@
 <?php
-include_once 'connect.php';
+// include_once 'connect.php';
+include_once 'connection.php';
+
 
 
 function select($table){
 	$query = " SELECT * FROM ".$table;
 
-	$conn = connection();
+	$connection  = new connection();
+	$conn = $connection->connect();
 
 
 	$result = $conn->query($query);
@@ -38,7 +41,9 @@ function insert($table,$data){
 	$string = '('.$string1.')'.' VALUES '.'('.$string2.')';
 	
 	$query = $query . $string;
-	$conn = connection();
+	
+	$connection  = new connection();
+	$conn = $connection->connect();
 
 	$status = $conn->query($query);
 	return $status;
@@ -62,8 +67,38 @@ function fix($table,$data,$id){
 }
 	
 	$query = $query . $string . $stringtail;
+	echo $query;
+	die();
+	$connection  = new connection();
+	$conn = $connection->connect();
+
+	$status = $conn->query($query);
+	return $status;
+}
+
+
+function user_edit($table,$data,$id){
 	
-	$conn = connection();
+	$query = "UPDATE $table SET ";
+	$string = '';
+	$stringtail = " WHERE users_id = $id;";
+	$i = 0;
+	foreach ($data as $column => $value) {
+		$i++;
+		if($i==1){
+			continue;
+		}
+		$query = $query . $column.'='."'".$value."'";
+		if ($i != count($data)) {
+			$query .= ", ";
+	}
+
+}
+	
+	$query = $query . $string . $stringtail;
+	
+	$connection  = new connection();
+	$conn = $connection->connect();
 
 	$status = $conn->query($query);
 	return $status;
@@ -73,8 +108,19 @@ function delete($table,$id){
 	$query = "DELETE FROM $table WHERE id = '$id';";
 	
 	
-	$conn = connection();
+	$connection  = new connection();
+	$conn = $connection->connect();
+	$status = $conn->query($query);
+	return $status;
+}
 
+
+function user_delete($table,$id){
+	$query = "DELETE FROM $table WHERE users_id = '$id';";
+	
+	
+	$connection  = new connection();
+	$conn = $connection->connect();
 	$status = $conn->query($query);
 	return $status;
 }

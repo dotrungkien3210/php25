@@ -1,6 +1,7 @@
 <?php
 
 include '../helper/sql.php';
+include_once '../helper/connection.php';
 
 $severname = "localhost";
 $username = 'root';
@@ -28,7 +29,7 @@ delete('categories',$id);
 
 $status = delete('categories',$id);
 if($status)
-	header('Location: database.php');
+	header('Location: category_index.php');
 else
 	echo "that bai";
 
