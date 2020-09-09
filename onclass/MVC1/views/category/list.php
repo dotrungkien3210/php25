@@ -1,15 +1,3 @@
-<?php
-
-
-// include "../helper/sql.php";
-// include_once "../helper/connection.php";
-// include_once '../helper/Model.php';
-include_once 'Category.php';
-$category_object = new Category();
-$categories = $category_object->getAll();
-
- ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,16 +29,16 @@ $categories = $category_object->getAll();
             <?php foreach ($categories as $key => $category) {?>
 
             	<tr>
-	                <td><?php echo $category['categories_id'];  ?></td>
-	                <td><?php echo $category['categories_name'];  ?></td>
+	                <td><?php echo $category['id'];  ?></td>
+	                <td><?php echo $category['name'];  ?></td>
 	                <td>
 	                    <img src="https://video-thumbs.mediacdn.vn//vtv/2018/10/2/0210thoi-su-19h-15384852850441347953968-a1b84_thumb3.jpg" width="100px" height="100px">
 	                </td>
-	                <td><?php echo $category['categories_description'];  ?></td>
+	                <td><?php echo $category['description'];  ?></td>
 	                <td>
-	                    <a href="detail.php?id=<?php echo $category['categories_id'] ?>">Detail</a>
-	                    <a href="edit.php?id=<?php echo $category['categories_id'] ?>">Edit</a>
-	                    <a href="delete_process.php?id=<?php echo $category['categories_id'] ?>">Delete</a>
+	                    <a href="detail.php?id=<?php echo $category['id'] ?>">Detail</a>
+	                    <a href="edit.php?id=<?php echo $category['id'] ?>">Edit</a>
+	                    <a href="delete_process.php?id=<?php echo $category['id'] ?>">Delete</a>
 	                    
 	                </td>
 	            </tr>

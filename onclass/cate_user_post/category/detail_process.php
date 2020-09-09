@@ -1,16 +1,12 @@
-<?php
+<?php 
 
+echo "thanh cong";
+echo $_GET['id'];
 
-// include "../helper/sql.php";
-// include_once "../helper/connection.php";
-// include_once '../helper/Model.php';
-include_once 'Category.php';
-$category_object = new Category();
-$categories = $category_object->getAll();
 
  ?>
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -28,33 +24,28 @@ $categories = $category_object->getAll();
 <body>
     <div class="container">
         <h3 class="text-center">--- CATEGORIES ---</h3>
-        <a href="add.php" class="btn btn-primary">Add New Category</a>
+        <a href="category_index.php" class="btn btn-primary">Back</a>
         <table class="table">
             <thead>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Thumbnail</th>
                 <th>Description</th>
-                <th>Action</th>
+                
             </thead>
 
-            <?php foreach ($categories as $key => $category) {?>
+          
 
             	<tr>
-	                <td><?php echo $category['categories_id'];  ?></td>
-	                <td><?php echo $category['categories_name'];  ?></td>
+	                <td><?php echo $categories['categories_id'];  ?></td>
+	                <td><?php echo $categories['categories_name'];  ?></td>
 	                <td>
 	                    <img src="https://video-thumbs.mediacdn.vn//vtv/2018/10/2/0210thoi-su-19h-15384852850441347953968-a1b84_thumb3.jpg" width="100px" height="100px">
 	                </td>
-	                <td><?php echo $category['categories_description'];  ?></td>
-	                <td>
-	                    <a href="detail.php?id=<?php echo $category['categories_id'] ?>">Detail</a>
-	                    <a href="edit.php?id=<?php echo $category['categories_id'] ?>">Edit</a>
-	                    <a href="delete_process.php?id=<?php echo $category['categories_id'] ?>">Delete</a>
-	                    
-	                </td>
+	                <td><?php echo $categories['categories_description'];  ?></td>
+	                
 	            </tr>
- 			<?php }  ?>
+ 			
             
       
         </table>

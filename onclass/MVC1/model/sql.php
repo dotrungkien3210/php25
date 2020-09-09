@@ -18,26 +18,9 @@ function select($table){
 	while($row = $result->fetch_assoc()) { 
 		$data[] = $row;
 	}
-    
+
 	return $data;
 }
-
-
-
-function detail($table,$id){
-	 $query = "SELECT * from ".$table." WHERE ".$table."_id = " . $id;
-	
-
-	/*$connection  = new connection();
-	$conn = $connection->connect();
-
-	$status = $conn->query($query);
-*/
-	return $query;
-}
-
-
-
 // insert table để duyệt được 
 function insert($table,$data){
 	$query = "INSERT INTO $table ";
@@ -65,12 +48,40 @@ function insert($table,$data){
 	$status = $conn->query($query);
 	return $status;
 }
-function edit($table,$data,$id){
+function fix($table,$data,$id){
 	
 	$query = "UPDATE $table SET ";
 	$string = '';
-	$stringtail = " WHERE ". $table."_id = $id;";
+	$stringtail = " WHERE id = $id;";
+	$i = 0;
+	foreach ($data as $column => $value) {
+		$i++;
+		if($i==1){
+			continue;
+		}
+		$query = $query . $column.'='."'".$value."'";
+		if ($i != count($data)) {
+			$query .= ", ";
+	}
 
+}
+	
+	$query = $query . $string . $stringtail;
+	echo $query;
+	die();
+	$connection  = new connection();
+	$conn = $connection->connect();
+
+	$status = $conn->query($query);
+	return $status;
+}
+
+
+function user_edit($table,$data,$id){
+	
+	$query = "UPDATE $table SET ";
+	$string = '';
+	$stringtail = " WHERE users_id = $id;";
 	$i = 0;
 	foreach ($data as $column => $value) {
 		$i++;
@@ -94,8 +105,8 @@ function edit($table,$data,$id){
 }
 
 function delete($table,$id){
-	$query = "DELETE FROM $table WHERE ".$table."_id = '$id';";
-
+	$query = "DELETE FROM $table WHERE id = '$id';";
+	
 	
 	$connection  = new connection();
 	$conn = $connection->connect();
@@ -104,5 +115,14 @@ function delete($table,$id){
 }
 
 
+function user_delete($table,$id){
+	$query = "DELETE FROM $table WHERE users_id = '$id';";
+	
+	
+	$connection  = new connection();
+	$conn = $connection->connect();
+	$status = $conn->query($query);
+	return $status;
+}
 
 ?>

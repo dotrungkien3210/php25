@@ -6,7 +6,7 @@ include '../helper/sql.php';
 $data = $_POST;
 
 
-$status = user_edit('users',$data,$data['users_id']);
+$status = edit('users',$data,$data['users_id']);
 
 
 if($status)

@@ -17,16 +17,16 @@
     <!-- thuộc tính name sẽ truyền là key của mảng  -->
     <div class="container">
     <h3 align="center">DevMind - Education And Technology Group</h3>
-    <h3 align="center">Add New Category</h3>
+    <h3 align="center">Add New Post</h3>
     <hr>
         <form action="add_process.php" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" id="" placeholder="insert name" name="users_name">
+                <input type="text" class="form-control" id="" placeholder="insert Post name" name="posts_name">
             </div>
             <div class="form-group">
-                <label for="">Description</label>
-                <input type="text" class="form-control" id="" placeholder="insert Description" name="users_description">
+                <label for="">Post</label>
+                <input type="text" class="form-control" id="" placeholder="insert Post" name="posts_description">
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

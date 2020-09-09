@@ -1,12 +1,6 @@
 <?php
-
-$id = $_GET['id'];
-
-// Có thể dùng isset để kiểm tra tồn tại $_GET
-
-
-
-
+include_once '../helper/sql.php';
+include_once '../helper/connection.php';
 
 $severname = "localhost";
 $username = 'root';
@@ -14,22 +8,24 @@ $password= '';
 $dbname = "php25buoi5";
 $conn = new mysqli($severname,$username,$password,$dbname);
 if ($conn->connect_error) {
-	echo "failed to connect".$conn->connect_error;
-	exit();
+    echo "failed to connect".$conn->connect_error;
+    exit();
 }
+/*$query = " SELECT * FROM categories ";
+
+// biến categories để lưu mảng dữ liệu*/
+$posts = array();
 
 
+$id = $_GET['id'];
+$query = detail('posts',$id);
+
+$result = $conn->query($query);
 
 
-// Viết câu lệnh để thêm dữ liệu
-    $query = "SELECT * from users WHERE users_id = ". $id;
-  
-// Thực thi câu lệnh
-    $result = $conn->query($query);
+// Trả về 1 bản ghi
+$post = $result->fetch_assoc();
 
-    // Trả về 1 bản ghi
-    $users = $result->fetch_assoc();
-   
 ?>
 
 
@@ -38,7 +34,7 @@ if ($conn->connect_error) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CATEGORIES</title>
+    <title>POSTS</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
@@ -50,8 +46,8 @@ if ($conn->connect_error) {
 </head>
 <body>
     <div class="container">
-        <h3 class="text-center">--- USERS ---</h3>
-        <a href="user_index.php" class="btn btn-primary">Back</a>
+        <h3 class="text-center">--- POSTS ---</h3>
+        <a href="post_index.php" class="btn btn-primary">Back</a>
         <table class="table">
             <thead>
                 <th>ID</th>
@@ -64,12 +60,12 @@ if ($conn->connect_error) {
           
 
             	<tr>
-	                <td><?php echo $users['users_id'];  ?></td>
-	                <td><?php echo $users['users_name'];  ?></td>
+	                <td><?php echo $post['posts_id'];  ?></td>
+	                <td><?php echo $post['posts_name'];  ?></td>
 	                <td>
 	                    <img src="https://video-thumbs.mediacdn.vn//vtv/2018/10/2/0210thoi-su-19h-15384852850441347953968-a1b84_thumb3.jpg" width="100px" height="100px">
 	                </td>
-	                <td><?php echo $users['users_description'];  ?></td>
+	                <td><?php echo $post['posts_description'];  ?></td>
 	                
 	            </tr>
  			

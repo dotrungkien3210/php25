@@ -11,9 +11,9 @@ if ($conn->connect_error) {
 }
 
 // biến query chọn tất cả từ table categories
-$query = " SELECT * FROM users ";
+$query = " SELECT * FROM posts ";
 // biến categories để lưu mảng dữ liệu
-$users = array();
+$posts = array();
 
 $id = $_GET['id'];
 
@@ -21,7 +21,7 @@ $result = $conn->query($query);
 
 
 // Trả về 1 bản ghi
-$user = $result->fetch_assoc();
+$post = $result->fetch_assoc();
 
 
    
@@ -46,17 +46,17 @@ $user = $result->fetch_assoc();
 <body>
     <div class="container">
     <h3 align="center">DevMind - Education And Technology Group</h3>
-    <h3 align="center">Add New USERS</h3>
+    <h3 align="center">Add New POST</h3>
     <hr>
         <form action="edit_process.php" method="POST" role="form" enctype="multipart/form-data">
-          <input type="hidden" name="users_id" value="<?php echo $id  ?>">
+          <input type="hidden" name="posts_id" value="<?php echo $id  ?>">
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" id="" placeholder="input user" value="<?php echo $user['users_name']?>" name="users_name">
+                <input type="text" class="form-control" id="" placeholder="input post" value="<?php echo $post['posts_name']?>" name="posts_name">
             </div>
             <div class="form-group">
                 <label for="">Description</label>
-                <input type="text" class="form-control" id="" placeholder="input Description" value="<?php echo $user['users_description']?>" name= "users_description" >
+                <input type="text" class="form-control" id="" placeholder="input Description" value="<?php echo $post['posts_description']?>" name= "posts_description" >
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

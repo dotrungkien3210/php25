@@ -25,11 +25,11 @@ $result = $conn->query($query);
 // Trả về 1 bản ghi
 $users = $result->fetch_assoc();
 
-user_delete('users',$id);
+delete('posts',$id);
 
-$status = user_delete('users',$id);
+$status = delete('posts',$id);
 if($status)
-	header('Location: user_index.php');
+	header('Location: post_index.php');
 else
 	echo "that bai";
 

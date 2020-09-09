@@ -21,11 +21,11 @@
         <form action="add_process.php" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" id="" placeholder="" name="name">
+                <input type="text" class="form-control" id="" placeholder="" name="categories_name">
             </div>
             <div class="form-group">
                 <label for="">Description</label>
-                <input type="text" class="form-control" id="" placeholder="" name="description">
+                <input type="text" class="form-control" id="" placeholder="" name="categories_description">
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

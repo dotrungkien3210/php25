@@ -1,15 +1,3 @@
-<?php
-
-
-// include "../helper/sql.php";
-// include_once "../helper/connection.php";
-// include_once '../helper/Model.php';
-include_once 'Post.php';
-$post_object = new Post();
-$posts = $post_object->getAll();
-
- ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,21 +28,21 @@ $posts = $post_object->getAll();
 
             <?php foreach ($posts as $key => $post) {?>
 
-            	<tr>
-	                <td><?php echo $post['posts_id'];  ?></td>
-	                <td><?php echo $post['posts_name'];  ?></td>
-	                <td>
-	                    <img src="https://video-thumbs.mediacdn.vn//vtv/2018/10/2/0210thoi-su-19h-15384852850441347953968-a1b84_thumb3.jpg" width="100px" height="100px">
-	                </td>
-	                <td><?php echo $post['posts_description'];  ?></td>
-	                <td>
-	                    <a href="detail.php?id=<?php echo $post['posts_id'] ?>">Detail</a>
-	                    <a href="edit.php?id=<?php echo $post['posts_id'] ?>">Edit</a>
-	                    <a href="delete_process.php?id=<?php echo $post['posts_id'] ?>">Delete</a>
-	                    
-	                </td>
-	            </tr>
- 			<?php }  ?>
+                <tr>
+                    <td><?php echo $post['posts_id'];  ?></td>
+                    <td><?php echo $post['posts_name'];  ?></td>
+                    <td>
+                        <img src="https://video-thumbs.mediacdn.vn//vtv/2018/10/2/0210thoi-su-19h-15384852850441347953968-a1b84_thumb3.jpg" width="100px" height="100px">
+                    </td>
+                    <td><?php echo $post['posts_description'];  ?></td>
+                    <td>
+                        <a href="detail.php?id=<?php echo $post['posts_id'] ?>">Detail</a>
+                        <a href="edit.php?id=<?php echo $post['posts_id'] ?>">Edit</a>
+                        <a href="delete_process.php?id=<?php echo $post['posts_id'] ?>">Delete</a>
+                        
+                    </td>
+                </tr>
+            <?php }  ?>
             
       
         </table>

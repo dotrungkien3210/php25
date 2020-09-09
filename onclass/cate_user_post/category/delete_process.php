@@ -1,6 +1,6 @@
 <?php
 
-include '../helper/sql.php';
+include_once '../helper/sql.php';
 include_once '../helper/connection.php';
 
 $severname = "localhost";

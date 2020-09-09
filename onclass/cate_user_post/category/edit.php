@@ -51,11 +51,11 @@ $category = $result->fetch_assoc();
           <input type="hidden" name="id" value="<?php echo $id  ?>">
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" id="" placeholder="" value="<?php echo $category['name']?>" name="name">
+                <input type="text" class="form-control" id="" placeholder="" value="<?php echo $category['categories_name']?>" name="categories_name">
             </div>
             <div class="form-group">
                 <label for="">Description</label>
-                <input type="text" class="form-control" id="" placeholder="" value="<?php echo $category['description']?>" name= "description" >
+                <input type="text" class="form-control" id="" placeholder="" value="<?php echo $category['categories_description']?>" name= "categories_description" >
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

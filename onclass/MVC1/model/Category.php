@@ -1,18 +1,19 @@
-<?php
-include_once '../helper/Model.php';
+<?php 
+include_once 'model/Model.php';
 /**
  * 
  */
-class Post extends Model
+class Category extends Model
 {
 	
-	var $table = 'posts';
+	var $table = 'categories';
 
 	   function getAll(){
+	   
 	         return $this->select($this->table);
 	          
 	  }
 }
 
 
-?>
+ ?>

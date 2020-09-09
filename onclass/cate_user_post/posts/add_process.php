@@ -5,9 +5,9 @@ include '../helper/sql.php';
 $data = $_POST;
 
 
-$status = insert('users',$data);
+$status = insert('posts',$data);
 if($status)
-	header('Location: user_index.php');
+	header('Location: post_index.php');
 else
 	echo "that bai";
 

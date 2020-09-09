@@ -25,9 +25,9 @@ $result = $conn->query($query);
 // Trả về 1 bản ghi
 $users = $result->fetch_assoc();
 
-user_delete('users',$id);
+delete('users',$id);
 
-$status = user_delete('users',$id);
+$status = delete('users',$id);
 if($status)
 	header('Location: user_index.php');
 else
