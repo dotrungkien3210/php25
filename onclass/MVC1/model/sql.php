@@ -21,6 +21,12 @@ function select($table){
 
 	return $data;
 }
+function detail($table,$id){
+	 $query = "SELECT * from ".$table." WHERE ".$table."_id = " . $id;
+	
+
+	return $query;
+}
 // insert table để duyệt được 
 function insert($table,$data){
 	$query = "INSERT INTO $table ";

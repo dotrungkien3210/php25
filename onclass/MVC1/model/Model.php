@@ -5,13 +5,14 @@ include_once "connection.php";
 class Model
 {
 	var $conn;
+
 	function __construct(){
     	
     	$connection  = new connection();
     	$this->conn = $connection->connect();
 	}
 
-	function select($table){
+    function select($table){
 		$query = " SELECT * FROM ".$table;
 
 
@@ -26,7 +27,14 @@ class Model
 
 		return $data;
 	}
+function detail($table,$id){
+	 $query = "SELECT * from ".$table." WHERE ".$table."_id = " . $id;
 
+
+	$status = $this->conn->query($query);
+	
+	return $status;
+}
 
 // insert table để duyệt được 
 function insert($table,$data){
@@ -48,7 +56,7 @@ function insert($table,$data){
 	$string = '('.$string1.')'.' VALUES '.'('.$string2.')';
 	
 	$query = $query . $string;
-	$conn = connect();
+	
 
 	$status = $this->conn->query($query);
 	return $status;
@@ -72,10 +80,8 @@ function fix($table,$data,$id){
 }
 	
 	$query = $query . $string . $stringtail;
-	
-	$conn = connect();
 
-	$status = $conn->query($query);
+	$status = $this->conn->query($query);
 	return $status;
 }
 
@@ -83,8 +89,6 @@ function delete($table,$id){
 	$query = "DELETE FROM $table WHERE id = '$id';";
 	
 	
-	$conn = connect();
-
 	$status = $this->conn->query($query);
 	return $status;
 }

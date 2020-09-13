@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <h3 class="text-center">--- CATEGORIES ---</h3>
-        <a href="add.php" class="btn btn-primary">Add New Category</a>
+        <a href="?mod=category&act=create" class="btn btn-primary">Add New Category</a>
         <table class="table">
             <thead>
                 <th>ID</th>
@@ -29,16 +29,16 @@
             <?php foreach ($categories as $key => $category) {?>
 
             	<tr>
-	                <td><?php echo $category['id'];  ?></td>
-	                <td><?php echo $category['name'];  ?></td>
+	                <td><?php echo $category['categories_id'];  ?></td>
+	                <td><?php echo $category['categories_name'];  ?></td>
 	                <td>
 	                    <img src="https://video-thumbs.mediacdn.vn//vtv/2018/10/2/0210thoi-su-19h-15384852850441347953968-a1b84_thumb3.jpg" width="100px" height="100px">
 	                </td>
-	                <td><?php echo $category['description'];  ?></td>
+	                <td><?php echo $category['categories_description'];  ?></td>
 	                <td>
-	                    <a href="detail.php?id=<?php echo $category['id'] ?>">Detail</a>
-	                    <a href="edit.php?id=<?php echo $category['id'] ?>">Edit</a>
-	                    <a href="delete_process.php?id=<?php echo $category['id'] ?>">Delete</a>
+	                    <a href="?mod=category&act=show&id=<?php echo $category['categories_id'] ?>">Detail</a>
+	                    <a href="edit.php?id=<?php echo $category['categories_id'] ?>">Edit</a>
+	                    <a href="?mod=category&act=delete&id=<?php echo $category['categories_id'] ?>">Delete</a>
 	                    
 	                </td>
 	            </tr>

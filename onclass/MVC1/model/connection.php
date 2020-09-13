@@ -5,6 +5,7 @@ class connection{
 	var $username;
 	var $password;
 	var $dbname;
+	
 	function connect(){
 
 		$severname = "localhost";
