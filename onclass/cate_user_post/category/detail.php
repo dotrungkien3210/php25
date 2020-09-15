@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 /*$query = " SELECT * FROM categories ";
 
 // biến categories để lưu mảng dữ liệu*/
-$categories = array();
+$category = array();
 
 
 $id = $_GET['id'];

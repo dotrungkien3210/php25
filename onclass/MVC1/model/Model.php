@@ -29,11 +29,18 @@ class Model
 	}
 function detail($table,$id){
 	 $query = "SELECT * from ".$table." WHERE ".$table."_id = " . $id;
-
+    
 
 	$status = $this->conn->query($query);
 	
-	return $status;
+	$data = array();
+		
+
+		while($row = $status->fetch_assoc()) { 
+			$data[] = $row;
+		}
+
+		return $data;
 }
 
 // insert table để duyệt được 
@@ -61,7 +68,7 @@ function insert($table,$data){
 	$status = $this->conn->query($query);
 	return $status;
 }
-function fix($table,$data,$id){
+function editModel($table,$id){
 	
 	$query = "UPDATE $table SET ";
 	$string = '';
@@ -86,7 +93,7 @@ function fix($table,$data,$id){
 }
 
 function delete($table,$id){
-	$query = "DELETE FROM $table WHERE id = '$id';";
+	$query = "DELETE FROM $table WHERE ".$table."_id = '$id';";
 	
 	
 	$status = $this->conn->query($query);

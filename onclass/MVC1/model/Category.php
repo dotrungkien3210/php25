@@ -19,9 +19,15 @@ class Category extends Model
 	 function showOne($id){
 	 	return $this->detail($this->table,$id);
 	 }
-	 
+	  function editOne($id){
+	  	
+       
+         return $this->editModel($this->table,$id);
+	  }
 	 function deleteOne($id){
+	 
 	 	return $this->delete($this->table,$id);
+
 	 }
 
 }

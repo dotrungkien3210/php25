@@ -37,7 +37,7 @@
 	                <td><?php echo $category['categories_description'];  ?></td>
 	                <td>
 	                    <a href="?mod=category&act=show&id=<?php echo $category['categories_id'] ?>">Detail</a>
-	                    <a href="edit.php?id=<?php echo $category['categories_id'] ?>">Edit</a>
+	                    <a href="?mod=category&act=edit&id=<?php echo $category['categories_id'] ?>">Edit</a>
 	                    <a href="?mod=category&act=delete&id=<?php echo $category['categories_id'] ?>">Delete</a>
 	                    
 	                </td>

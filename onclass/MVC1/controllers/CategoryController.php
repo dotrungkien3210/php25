@@ -6,7 +6,7 @@ class CategoryController{
 
       $model = new Category();
       $categories =   $model->getAll();
-     
+    
       
      require_once 'views/category/list.php';
 	}
@@ -25,27 +25,30 @@ class CategoryController{
 	public function show(){
           
           $id = $_GET['id'];
+
           $model = new Category();
-          $model->showOne($id);
+         $categories =  $model->showOne($id);
+
          require_once 'views/category/detail.php';
 		
 	}
 	// hàm trả về giao diện mới
-	public function edit($id){
-       $model = new Category();
-		$model->create($data);
-		header("Location: index.php?mod=category&act=list");
+	public function edit(){
+		 $id = $_GET['id'];
+		 $model = new Category();
+         $categories =  $model->editOne($id);
 	}
 	// hàm xử lý cập nhật
 	public function update($request,$id){
-			 $model = new Category();
-		$model->update($data);
+
 	}
 	// hàm xử lý xóa
-	public function delete($id){
+	public function delete(){
 		  $id = $_GET['id'];
           $model = new Category();
-          $model->deleteOne($id);
+          
+           $model->deleteOne($id);
+          
          header("Location: index.php?mod=category&act=list");
 	}
 }
