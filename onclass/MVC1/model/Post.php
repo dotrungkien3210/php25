@@ -5,15 +5,12 @@ include_once 'model/Model.php';
  */
 class Post extends Model
 {
-    
-    var $table = 'posts';
-
-       function getAll(){
-       // trr lại cái table được chọn
-             return $this->select($this->table);
-              
-      }
+	class Post extends Model {
+    public function __construct()
+    {
+        parent::__construct();//Kế thừa lại biến connection của class Model
+        $this->table = 'posts';//Khai báo tên table cho model
+    }
 }
-
-
- ?>
+}
+?>

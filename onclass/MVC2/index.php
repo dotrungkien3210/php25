@@ -17,8 +17,8 @@ $data = $_POST;
 $params[] = $data;
 
 
-$class = ucfirst($mod)."Controller";//CategoryController
-$path =  'controllers/' . $class . '.php';
+$class = ucfirst($mod)."AdminController";//CategoryController
+$path =  'controllers/admin/' . $class . '.php';
 
 if(!file_exists($path))
 {

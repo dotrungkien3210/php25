@@ -1,7 +1,6 @@
 <?php
 require_once 'controllers/BaseController.php';
 require_once 'model/User.php';
-session_start();
 /**
  * 
  */
@@ -22,14 +21,17 @@ class AuthAdminController extends BaseController
           
           if ($user) {
           	if ($user['users_password']==$password) {
-          		echo "dang nhap thanh cong";
+                    $_SESSION['login'] = true;
+          		
           		header("Location: index.php?mod=admin&act=index&c=category");
           	}
           	else{
+                    $_SESSION['login'] = false;
                     echo "sai mat khau";
                }
           }
           else{
+               $_SESSION['login'] = false;
           	echo "sai tai khoan";
           }
 	}

@@ -15,7 +15,9 @@ if ($conn->connect_error) {
 
 
 $data = $_POST;
-
+echo "đã vào process";
+print_r($data);
+die();
 $status = edit('categories',$data,$data['id']);
 
 

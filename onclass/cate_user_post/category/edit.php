@@ -19,7 +19,6 @@ $id = $_GET['id'];
 
 $result = $conn->query($query);
 
-
 // Trả về 1 bản ghi
 $category = $result->fetch_assoc();
 

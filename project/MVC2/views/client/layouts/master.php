@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-<?php include 'views/admin/includes/header.php' ?>
+<?php include 'views/client/include/header.php' ?>
 <body>
 <div class="wrapper">
 
   <!-- Navbar -->
-  <?php include 'views/admin/includes/navbar.php' ?>
+  <?php include 'views/client/include/navbar.php' ?>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <!-- <?php include 'views/admin/includes/sidebar.php' ?> -->
+  <!-- <?php include 'views/client/include/sidebar.php' ?> -->
 
   <!-- Content Wrapper. Contains page content -->
-  <?php require_once  'views/admin/post/'.$page.'.php' ?>
+  <?php require_once  'views/client/'.$page.'.php' ?>
   <!-- /.content-wrapper -->
   
   
   <!-- Control Sidebar -->
-  <?php include 'views/admin/includes/main_footer.php' ?>
+  <?php include 'views/client/include/main_footer.php' ?>
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
-<?php include 'views/admin/includes/footer.php' ?>
+<?php include 'views/client/include/footer.php' ?>
 </body>
 </html>

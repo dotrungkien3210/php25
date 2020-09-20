@@ -14,18 +14,17 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
-    <h3 align="center">DevMind - Education And Technology Group</h3>
-    <h3 align="center">Add New Category</h3>
+    <div class="container" style="background-color: #216a68; width: 950px; border-radius: 10px;">
+    <h3 align="center">Edit Category</h3>
     <hr>
-        <form action="index.php?mod=category&act=store" method="POST" role="form" enctype="multipart/form-data">
+        <form action="index.php?mod=admin&c=category&act=store" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" id="" placeholder="" name="categories_name">
+                <input type="text" class="form-control" id="" placeholder=""  name="categories_name">
             </div>
             <div class="form-group">
                 <label for="">Description</label>
-                <input type="text" class="form-control" id="" placeholder="" name="categories_description">
+                <input type="text" class="form-control" id="" placeholder=""  name= "categories_description" >
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

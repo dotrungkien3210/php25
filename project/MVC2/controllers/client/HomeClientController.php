@@ -3,7 +3,7 @@ require_once 'controllers/BaseController.php';
 /**
  * 
  */
-echo "đã vào trong home client";
+
 class HomeClientController extends BaseController
 {
 
@@ -12,6 +12,7 @@ class HomeClientController extends BaseController
 		# code...
 	}
 	public function home(){
+
 		$this->view('client/layouts/master',['page'=>'home']);
 	}
 	public function category(){

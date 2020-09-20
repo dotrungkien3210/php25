@@ -1,5 +1,5 @@
 <?php
-
+/*hàm này có tác dụng chuyển hướng hoặc lấy file trong  views và model*/
 class BaseController{
 	public function view($path,$data = []){
 
@@ -16,7 +16,4 @@ class BaseController{
 		header("location: ".$path);
 	}
 }
-
-
-
-  ?>
+?>

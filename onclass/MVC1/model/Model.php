@@ -27,22 +27,6 @@ class Model
 
 		return $data;
 	}
-function detail($table,$id){
-	 $query = "SELECT * from ".$table." WHERE ".$table."_id = " . $id;
-    
-
-	$status = $this->conn->query($query);
-	
-	$data = array();
-		
-
-		while($row = $status->fetch_assoc()) { 
-			$data[] = $row;
-		}
-
-		return $data;
-}
-
 // insert table để duyệt được 
 function insert($table,$data){
 	$query = "INSERT INTO $table ";
@@ -68,29 +52,56 @@ function insert($table,$data){
 	$status = $this->conn->query($query);
 	return $status;
 }
-function editModel($table,$id){
-	
-	$query = "UPDATE $table SET ";
-	$string = '';
-	$stringtail = " WHERE id = $id;";
-	$i = 0;
-	foreach ($data as $column => $value) {
-		$i++;
-		if($i==1){
-			continue;
-		}
-		$query = $query . $column.'='."'".$value."'";
-		if ($i != count($data)) {
-			$query .= ", ";
-	}
-
-}
-	
-	$query = $query . $string . $stringtail;
+function detail($table,$id){
+	 $query = "SELECT * from ".$table." WHERE ".$table."_id = " . $id;
+    
 
 	$status = $this->conn->query($query);
-	return $status;
+	
+	$data = array();
+		
+
+		while($row = $status->fetch_assoc()) { 
+			$data[] = $row;
+		}
+
+		return $data;
 }
+function editModel($table,$id){
+	
+	$query = "SELECT * FROM $this->table where ".$this->table."_id = " . $id;
+   
+        $result = $this->conn->query($query);
+    
+        $status = $result->fetch_assoc();
+        return $status;
+
+}
+function update($data , $id) {
+        $string_1 = "";
+        $i = 0;
+
+        $query = "UPDATE  $this->table SET ";
+        $query_1 = " where ".$this->table."_id = $id";
+
+        foreach($data as $column => $value){
+            $string_1 .= $column . " = " ."'". $value ."'";
+            $i++;
+
+            if($i == 0) {
+                $value = $id;
+            }
+            if($i != count($data)) {
+                $string_1 .= " , ";
+            } 
+        }
+        
+        $query = $query . $string_1 . $query_1;
+        echo $query;
+        $status = $this->conn->query($query);
+        return $status;
+    }
+
 
 function delete($table,$id){
 	$query = "DELETE FROM $table WHERE ".$table."_id = '$id';";

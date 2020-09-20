@@ -4,7 +4,7 @@ class BaseController{
 	public function view($path,$data = []){
 
 		extract($data);
-
+		
 		require_once "views/".$path.".php";
 	}
 	/*gọi từ category.php, post.php user.php để return lại*/
