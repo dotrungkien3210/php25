@@ -33,7 +33,7 @@
  
 // This will return all files in that folder
 $files = scandir("uploads");
- 
+print_r($files);
 for ($a = 2; $a < count($files); $a++){ ?>
     <tr>
     <td><?php echo $a-1; ?></td>

@@ -39,13 +39,15 @@ function file_upload($target_dir,$input_name,$max_size, $formats_allowed_array){
 
 
 
-	 if(isset($_POST['submit'])){ // kiểm tra xem button Submit đã được click hay chưa ? 
+	 if(isset($_POST['submit'])){
 	 	echo "hello";
         $uploads = file_upload("uploads","ANH_SP",500000,array('jpg', 'png' , 'doc' , 'docx', 'pdf'));
         if(gettype($uploads) == "array"){
-            print_r($uploads); // Trả về mảng lỗi nếu ko upload được
-        }else{
-            // Getting uploaded file
+            print_r($uploads);
+           die();
+        }
+        else{
+           
 $file = $_FILES["ANH_SP"];
  
 // upload từ foder
