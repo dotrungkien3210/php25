@@ -23,7 +23,7 @@
                                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh mục</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="index.html">Home</a>
                                         <a class="dropdown-item" href="catagory.html">Catagory</a>
@@ -33,17 +33,15 @@
                                         <a class="dropdown-item" href="#">Contact</a>
                                     </div>
                                 </li>
+                                
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Gadgets</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Lifestyle</a>
+                                    <a class="nav-link" href="#">Cuộc Sống</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Video</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php?mod=admin&act=login&c=auth">Login</a>
+                                    <a class="nav-link" href="index.php?mod=admin&act=login&c=auth">Đăng Nhập</a>
                                 </li>
                             </ul>
                             <!-- Search Form  -->

@@ -13,7 +13,17 @@ var $table = 'posts';
 
 	   function getAll(){
 
-	         return $this->select($this->table);
+	         return $this->getNew();
+	          
+	  }
+	   function getAllNoData(){
+
+	         return $this->selectNoData($this->table);
+	          
+	  }
+	   function getAllNoDataCate($use){
+
+	         return $this->selectNoDataCate($this->table,$use);
 	          
 	  }
 	  function create($data){
@@ -37,7 +47,17 @@ var $table = 'posts';
 	 	return $this->delete($this->table,$id);
 
 	 }
+	 function getCateNamePost($item_per_page,$offset,$use){
 
+	         return $this->getCateNameModel($this->table,$item_per_page,$offset,$use);
+	          
+	  }
+
+	   function phanTrangPost($item_per_page,$offset){
+
+	         return $this->phanTrangModel($this->table,$item_per_page,$offset);
+	          
+	  }
 }
 
 

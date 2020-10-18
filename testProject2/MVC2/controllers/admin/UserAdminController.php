@@ -8,7 +8,7 @@ class UserAdminController extends AdminController
     public function __construct()
     {
         $this->model = new User();
-
+        parent::__construct();
     }
 	
 	public function index(){
@@ -30,7 +30,7 @@ public function list(){
 
 	}
 	public function store($data){
-	$data =$_POST;
+	
 		 $this->model->create($data);
 		header('Location: index.php?mod=admin&c=user&act=list');
 	}

@@ -40,6 +40,8 @@ function file_upload($target_dir,$input_name,$max_size, $formats_allowed_array){
 
 
 	 if(isset($_POST['submit'])){
+	 	print_r($_FILES);
+	 	die();
 	 	echo "hello";
         $uploads = file_upload("uploads","ANH_SP",500000,array('jpg', 'png' , 'doc' , 'docx', 'pdf'));
         if(gettype($uploads) == "array"){

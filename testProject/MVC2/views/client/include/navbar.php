@@ -20,25 +20,24 @@
                         <div class="collapse navbar-collapse" id="worldNav">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="index.php">Trang Chủ <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh mục</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="index.html">Home</a>
-                                        <a class="dropdown-item" href="catagory.html">Catagory</a>
-                                        <a class="dropdown-item" href="single-blog.html">Single Blog</a>
-                                        <a class="dropdown-item" href="regular-page.html">Regular Page</a>
-                                        <!-- ở login link tới trang đăng nhập -->
-                                        <a class="dropdown-item" href="#">Contact</a>
+<a class="dropdown-item" href="index.php?mod=client&c=home&act=getCate&use=volunteer">Hoạt Động Xã Hội</a>
+<a class="dropdown-item" href="index.php?mod=client&c=home&act=getCate&use=share">Chia Sẻ Kiến Thức</a>
+<a class="dropdown-item" href="index.php?mod=client&c=home&act=getCate&use=travel">Du Lịch</a>
+<a class="dropdown-item" href="index.php?mod=client&c=home&act=getCate&use=hobby">Sở Thích</a>
+
                                     </div>
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Cuộc Sống</a>
+                                    <a class="nav-link" href="index.php?mod=client&c=home&act=allPost">Bài Viết</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Video</a>
+                                    <a class="nav-link" href="https://i.topcv.vn/dotrungkien?ref=3425008">Tác Giả</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.php?mod=admin&act=login&c=auth">Đăng Nhập</a>
@@ -46,12 +45,13 @@
                             </ul>
                             <!-- Search Form  -->
                             <div id="search-wrapper">
-                                <form action="#">
-                                    <input type="text" id="search" placeholder="Search something...">
+                                <form action="index.php?mod=client&c=home&act=search" method="post">
+                                    <input type="search" id="search" name="key" placeholder="Search something...">
                                     <div id="close-icon"></div>
                                     <input class="d-none" type="submit" value="">
                                 </form>
                             </div>
+                            <!-- End Search Form  -->
                         </div>
                     </nav>
                 </div>

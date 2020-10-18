@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DevMind - Education And Technology Group</title>
+    <title>Sửa thông tin người dùng</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
@@ -14,23 +14,31 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container">
-    <h3 align="center">DevMind - Education And Technology Group</h3>
-    <h3 align="center">Edit USER</h3>
+    <div class="container" style="background-color: #216a68; width: 950px; border-radius: 10px;">
+    
+    <h3 align="center">Sửa thông tin người dùng</h3>
     <hr>
         <form action="index.php?mod=admin&c=user&act=update&id=<?php echo $id ?>" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="">Name</label>
+                <label for="">Tên người dùng</label>
                 <input type="text" class="form-control" id="" placeholder="" value="<?php echo $users['users_name']?>" name="users_name">
             </div>
+
             <div class="form-group">
-                <label for="">Description</label>
-                <input type="text" class="form-control" id="" placeholder="" value="<?php echo $users['users_description']?>" name= "users_description" >
-            </div>
-            <div class="form-group">
-                <label for="">Password</label>
+                <label for="">Mật khẩu</label>
                 <input type="text" class="form-control" id="" placeholder="" value="<?php echo $users['users_password']?>" name= "users_password" >
             </div>
+
+             <div class="form-group">
+                <label for="">quyền hạn</label>
+                <input type="text" class="form-control" id="" placeholder="" value="<?php echo $users['users_position']?>" name= "users_position" >
+            </div>
+
+            <div class="form-group">
+                <label class="bmd-label-floating">Ảnh đại diện</label>
+                <input type="text" class="form-control" name="users_thumbnail">
+            </div>
+
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

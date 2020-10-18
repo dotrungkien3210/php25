@@ -2,10 +2,11 @@
 
 
 
-define('URL', 'http://localhost:8080/phpzent/php25/project/MVC2/publics/');
-define('URL_TENPLATE_CLIENT', 'http://localhost:8080/phpzent/php25/project/MVC2/publics/client/');
-define('URL_TENPLATE_ADMIN', 'http://localhost:8080/phpzent/php25/project/MVC2/publics/admin/');
-define('URL_TENPLATE_AUTH', 'http://localhost:8080/phpzent/php25/project/MVC2/publics/auth/');
+define('URL', 'http://localhost:8080/phpzent/php25/testProject/MVC2/publics/');
+define('URL_TENPLATE_CLIENT', 'http://localhost:8080/phpzent/php25/testProject/MVC2/publics/client/');
+define('URL_TENPLATE_ADMIN', 'http://localhost:8080/phpzent/php25/testProject/MVC2/publics/admin/');
+define('URL_TENPLATE_AUTH', 'http://localhost:8080/phpzent/php25/testProject/MVC2/publics/auth/');
+session_start();
 class App{
 	private $mod = 'client';
 	private $act = 'home';
@@ -21,8 +22,15 @@ class App{
 		if (isset($_GET['c'])) {
 			$this->c  = $_GET['c'];
 		}
-		$this->params  = isset($_GET['id']) ? [$_GET['id']] : [];;
-		$this->params  = $_POST;
+
+		 $this->params['posts_slug']   = isset($_GET['slug']) ? $_GET['slug']:[];
+            $this->params['posts_id']     = isset($_GET['id']) ? $_GET['id']:[];
+            $data[]                 = $_POST;
+            $data[]                 = $_FILES;
+            $this->params['data']   = $data;
+
+
+		
 
 	}
 	public function  action(){

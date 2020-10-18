@@ -27,8 +27,42 @@ class Model
 
 		return $data;
 	}
+	// dùng cho nút bài viết load tất cả bài viết và phân trang
+	 function phanTrangModel($table,$item_per_page,$offset){
+	
+        $products = "SELECT * FROM ". $table ." ORDER BY ".$table."_id ASC  LIMIT " . $item_per_page . " OFFSET " . $offset;
+       	$result = $this->conn->query($products);
+       	$data = array();
+		
+
+		while($row = $result->fetch_assoc()) { 
+			$data[] = $row;
+		}
+		return $data;
+	}
+
+	function selectNoData($table){
+		$query = " SELECT * FROM ".$table;
+
+
+		$result = $this->conn->query($query);
+
+		return $result;
+	}
+
+	function selectNoDataCate($table,$use){
+		$query = "SELECT * FROM $this->table WHERE ".$this->table."_category=" . "'" .  $use . "'" ;
+
+
+		$result = $this->conn->query($query);
+
+		return $result;
+	}
+
+
 // insert table để duyệt được 
 function insert($table,$data){
+	
 	$query = "INSERT INTO $table ";
 	$string1 = '';
 	$string2 = '';
@@ -48,7 +82,6 @@ function insert($table,$data){
 	
 	$query = $query . $string;
 	
-
 	$status = $this->conn->query($query);
 	return $status;
 }
@@ -104,11 +137,42 @@ function update($data , $id) {
 
 function delete($table,$id){
 	$query = "DELETE FROM $table WHERE ".$table."_id = '$id';";
-	
-	
 	$status = $this->conn->query($query);
 	return $status;
 }
+public function searchName($key){
+	$query = "SELECT * FROM $this->table WHERE posts_name LIKE '%".$key."%'";
+	$result = $this->conn->query($query);
+
+		$data = array();
+		
+
+		while($row = $result->fetch_assoc()) { 
+			$data[] = $row;
+		}
+
+		return $data;
+}
+
+
+public function getCateNameModel($table,$item_per_page,$offset,$use){
+
+        $query = "SELECT * FROM $this->table WHERE ".$this->table."_category=" . "'" .  $use . "'"." ORDER BY ".$table."_id ASC  LIMIT " . $item_per_page . " OFFSET " . $offset;
+
+
+        $result = $this->conn->query($query);
+
+		$data = array();
+		
+
+		while($row = $result->fetch_assoc()) { 
+			$data[] = $row;
+		}
+
+		return $data;
+	
+}
+
 public function getByName($name) {
         $query = "SELECT * FROM $this->table where ".$this->table."_name=" . "'" .  $name . "'";
 
@@ -116,10 +180,22 @@ public function getByName($name) {
         $user = $result->fetch_assoc();
         return $user;
     }
+public function getNew(){
+		$query = "SELECT * FROM posts ORDER BY `posts_created_at` DESC";
 	
+		$result = $this->conn->query($query);
+
+		$data = array();
+		
+
+		while($row = $result->fetch_assoc()) { 
+			$data[] = $row;
+		}
+
+		return $data;
+	}
+
 }
-
-
 
 
 

@@ -30,5 +30,5 @@
 
     <!-- Main CSS-->
     <link href="<?php echo(URL)?>admin/css/theme.css" rel="stylesheet" media="all">
-
+    <script type="text/javascript" src="<?php echo(URL)?>admin/ckeditor/ckeditor.js"></script>
 </head>

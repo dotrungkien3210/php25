@@ -17,7 +17,7 @@ var $table = 'posts';
 	          
 	  }
 	  function create($data){
-
+	  
          return $this->insert($this->table,$data);
 	  }
 	 function showOne($id){

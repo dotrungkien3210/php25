@@ -13,5 +13,5 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="<?php echo(URL)?>client/dist/style.css">
-
+    <script type="text/javascript" src="<?php echo URL_TEMPLATE_ADMIN?>ckeditor/ckeditor.js"></script>
 </head>

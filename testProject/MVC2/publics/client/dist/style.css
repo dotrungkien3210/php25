@@ -1214,6 +1214,7 @@ textarea:focus ~ .highlight {
     -webkit-transform: rotate(-45deg) scaleX(0) translateY(-10px);
     transform: rotate(-45deg) scaleX(0) translateY(-10px); } }
 /* Footer Area CSS */
+
 .footer-area {
   background-color: #161616;
   padding: 70px 0;

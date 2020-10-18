@@ -29,6 +29,7 @@ class Model
 	}
 // insert table để duyệt được 
 function insert($table,$data){
+	
 	$query = "INSERT INTO $table ";
 	$string1 = '';
 	$string2 = '';
@@ -48,7 +49,6 @@ function insert($table,$data){
 	
 	$query = $query . $string;
 	
-
 	$status = $this->conn->query($query);
 	return $status;
 }

@@ -13,10 +13,10 @@
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                                <th>ID </th>
+                                               
                                                 <th>NAME</th>
                                                 <th>IMAGE</th>
-                                                <th>DESCRIPTION</th>
+                                              
                                                 <th class="text-right">ACTION</th>
                                             </tr>
                                         </thead>
@@ -24,10 +24,10 @@
 
                                             <?php foreach ($posts as $key => $post) {?>
                                             <tr>
-                                                <td><?php echo $post['posts_id'];  ?></td>
+                                                
                                                 <td><?php echo $post['posts_name'];  ?></td>
                                                 <td><img src="<?php echo $post['posts_thumbnail'];  ?>"></td>
-                                                <td><?php echo $post['posts_description'];  ?></td>
+                                               
                                             <td>
 <a class="btn btn-primary btn-sm" href="index.php?mod=admin&c=post&act=show&id=<?php echo $post['posts_id'] ?>">Detail</a>
 <a class="btn btn-warning btn-sm" href="index.php?mod=admin&c=post&act=edit&id=<?php echo $post['posts_id'] ?>">Edit</a>

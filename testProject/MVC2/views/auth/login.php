@@ -1,7 +1,9 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Login V18</title>
+  <title>Trang Đăng Nhập</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
@@ -72,12 +74,19 @@
               Login
             </button>
           </div>
+
+          <div style="background-color: pink;" class="container-login100-form-btn">
+            <button  class="login100-form-btn">
+              <a style="color: white; text-decoration: none;" href="index.php">Trở lại Trang Chủ</a>
+            </button>
+          </div>
           
           <div class="text-center p-t-46 p-b-20">
             <span class="txt2">
               or sign up using
             </span>
           </div>
+
 
           <div class="login100-form-social flex-c-m">
             <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">

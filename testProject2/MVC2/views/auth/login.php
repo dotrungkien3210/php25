@@ -1,7 +1,9 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Login V18</title>
+  <title>Trang Đăng Nhập</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
@@ -32,7 +34,7 @@
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
-        <form class="login100-form validate-form"  method="POST" action ="?mod=admin&act=checkLogin&c=auth">
+        <form class="login100-form validate-form"  method="POST" action ="index.php?mod=admin&act=checkLogin&c=auth">
           <span class="login100-form-title p-b-43">
             Login to continue
           </span>

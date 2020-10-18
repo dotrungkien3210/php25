@@ -14,7 +14,7 @@
 <div style="padding-top: 100px;" >
  <h5 style="text-align: center;"><?php echo $posts[0]['posts_name'];  ?></h5>
  <p style="text-align: center;"><?php echo $posts[0]['posts_content'];  ?></p>
-  <img style="width: 100%;" src="<?php echo $posts[0]['posts_thumbnail'];  ?>">
+ 
 <?php
 
 ?>

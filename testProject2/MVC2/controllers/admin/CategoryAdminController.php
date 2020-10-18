@@ -8,7 +8,7 @@ class CategoryAdminController extends AdminController
     public function __construct()
     {
         $this->model = new Category();
-
+        parent::__construct();
     }
 	
 	public function index(){
@@ -21,38 +21,33 @@ public function list(){
       $categories =    $this->model->getAll();
       $this->view('admin/layouts/master',['page'=>'category/list','categories'=>$categories]);
 	}
+	//2 hàm create và store để tạo ra một danh mục mới
 	public function create(){
-        $page  = 'category/create';
-      require_once "views/admin/layouts/master.php";
-
+		$this->view('admin/layouts/master',['page'=>'category/create']);
+      
 	}
 	public function store($data){
 	$data =$_POST;
-	print_r($data);
-	print_r($_FILES);
-	if(isset($_POST['submit'])){
-	 	echo "hello";
-	 }
-	die();
 		 $this->model->create($data);
 		header('Location: index.php?mod=admin&c=category&act=list');
 	}
-	// hàm trả về giao diện mới
+	// hàm show cho phép ta xem chi tiết một danh mục gồm những gì sau khi click vào nút detail
 	public function show(){
           
           $id = $_GET['id'];
 
          
          $categories =   $this->model->showOne($id);
-          $page  = 'category/detail';
-      require_once "views/admin/layouts/master.php";
+         $this->view('admin/layouts/master',['page'=>'category/detail','categories'=>$categories]);
 		
 	}
+	// hai làm edit và update để sửa đổi danh mục mình muốn
 	public function edit(){
 	 $id = $_GET['id'];
       $categories = $this->model->editOne($id);
-    $page  = 'category/edit';
-      require_once "views/admin/layouts/master.php";   
+      $this->view('admin/layouts/master',['page'=>'category/edit','categories'=>$categories,'id'=>$id]);
+    /*$page ='category/edit';
+      require_once "views/admin/layouts/master.php";   */
 	}
 	public function update(){
 		$data= $_POST;

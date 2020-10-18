@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DevMind - Education And Technology Group</title>
+    <title>Tạo người dùng mới</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
@@ -15,23 +15,29 @@
 </head>
 <body>
     <div class="container" style="background-color: #216a68; width: 950px; border-radius: 10px;">
-    <h3 align="center">Edit Post</h3>
+    <h3 align="center">Tạo người dùng mới</h3>
     <hr>
         <form action="index.php?mod=admin&c=user&act=store" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="">Name</label>
+                <label for="">Tên người dùng</label>
                 <input type="text" class="form-control" id="" placeholder=""  name="users_name">
             </div>
+
             <div class="form-group">
-                <label for="">Description</label>
-                <input type="text" class="form-control" id="" placeholder=""  name= "users_description" >
-            </div>
-            <div class="form-group">
-                <label for="">Password</label>
+                <label for="">Mật Khẩu</label>
                 <input type="text" class="form-control" id="" placeholder=""  name= "users_password" >
             </div>
 
-            <button type="submit" class="btn btn-primary">Create</button>
+            <div class="form-group">
+                <label for="">Quyền của người dùng</label>
+                <input type="text" class="form-control" id="" placeholder=""  name= "users_position" >
+            </div>
+
+            <div class="form-group">
+                <label class="bmd-label-floating">Ảnh người dùng</label>
+                <input type="text" class="form-control" name="users_thumbnail">
+            </div>
+            <button type="submit" class="btn btn-primary">Tạo Mới</button>
         </form>
     </div>
 </body>
